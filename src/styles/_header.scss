@@ -1,0 +1,67 @@
+@import "_variables";
+
+.brand_title {
+    color: $primary;
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 5px;
+    text-decoration: none;
+
+    &:hover {
+        color: $primary-dark
+    }
+}
+
+.nav-item a {
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+
+    &:hover {
+        color: $primary-dark
+    }
+}
+
+.brand_logo {
+    height: 70px;
+    margin-right: 8px;
+    margin-top: 5px;
+}
+
+.inactive {
+    color: #000000;
+
+    &:hover {
+        color: $primary-dark
+    }
+}
+
+.active {
+    font-weight: 800;
+    color: $primary;
+}
+
+// .dropdown-menu li {
+//     font-size: 10px;
+//     font-weight: 400;
+//     color: $black;
+//     margin: 10px;
+
+//     .dropdown-item {
+//         &:hover {
+//             color: $black;
+//             background-color: hsl(0, 60%, 50%);
+//         }
+
+//         &:active {
+//             background-color: red
+//         }
+//     }
+
+//     &:hover {
+//         color: $black;
+//     }
+
+// }
