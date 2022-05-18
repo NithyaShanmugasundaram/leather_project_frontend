@@ -1,0 +1,90 @@
+@import "_variables";
+
+.brand_title {
+    color: $primary;
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 5px;
+    text-decoration: none;
+
+    &:hover {
+        color: $primary;
+        text-decoration: none;
+
+    }
+}
+
+.nav-item a {
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+.brand_logo {
+    height: 50px;
+    margin: 3px 3px;
+    //padding: 3px 3px;
+
+}
+
+.inactive {
+    color: $navbar_white;
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+.active {
+    font-weight: 800;
+    color: $navbar_white;
+}
+
+.navbar {
+    background-color: $navbar;
+
+}
+
+.dropdown-menu {
+    background-color: $navbar;
+    border: none;
+    position: absolute;
+    top: 60px;
+    padding: 0px
+}
+
+.navbar-light .navbar-toggler {
+    color: $primary !important;
+    border-color: $primary;
+    border: 1px solid;
+}
+
+.carousel_img {
+    height: 300px;
+}
+
+@media (min-width: 768px) {
+
+    .brand_logo {
+        height: 70px;
+        margin-right: 8px;
+        margin-top: 5px;
+    }
+
+
+}
+
+@media (min-width: 567px) {
+
+
+
+    .carousel_img {
+        height: 500px
+    }
+}
