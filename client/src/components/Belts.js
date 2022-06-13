@@ -1,8 +1,8 @@
-import Header from './Header';
+import Landing from './Landing';
 import React from 'react';
 
 function Belts() {
-    return (<><Header />Belts</>);
+    return (<><Landing />Belts</>);
 }
 
 export default Belts;

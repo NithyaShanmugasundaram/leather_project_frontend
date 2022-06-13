@@ -1,0 +1,55 @@
+.tag_btn {
+    border: 1px solid #862d2d;
+    border-radius: 10px;
+    background-color: #e33825;
+    font-size: 16px;
+    font-weight: 600;
+    color: $navbar_white;
+    margin: 20px 10px;
+    padding: 5px 10px;
+    &:hover {
+        background-color: $primary-dark;
+        color: $white;
+    }
+}
+.tag_btn_group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.content_container {
+    padding: 20px 20px;
+    margin: 10px;
+}
+.content_link {
+    font-size: $font-size-xs;
+    font-weight: 600;
+    color: $black;
+}
+.general.dropdown-menu {
+    background-color: $white;
+    text-decoration: none;
+    padding: 10px 20px;
+    &.a {
+        text-decoration: none;
+    }
+    .inactive {
+        color: $black;
+        &:hover {
+            color: $primary;
+        }
+    }
+    .active {
+        font-weight: 400;
+        color: $black;
+        text-decoration: none;
+    }
+}
+
+.form-select {
+    font-size: $font-size-xs;
+    &.form-select-option {
+        background-color: $navbar;
+    }
+}

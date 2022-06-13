@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './Header';
+import Landing from './Landing';
 
 function Wallet() {
-    return (<><Header />Wallet</>);
+    return (<><Landing />Wallet</>);
 }
 
 export default Wallet;

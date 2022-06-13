@@ -13,7 +13,7 @@ const Carousel = () => {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src={image1} className="d-block w-100 carousel_img" alt="wallet_img" />
+                        <img src="https://s3.ap-southeast-1.amazonaws.com/agni.images/image.jpg" className="d-block w-100 carousel_img" alt="wallet_img" />
                     </div>
                     <div className="carousel-item">
                         <img src={logo} className="d-block w-100 carousel_img" alt="bag_img" />
@@ -31,7 +31,7 @@ const Carousel = () => {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
-        </div></>);
+        </div>
+    </>);
 }
-
 export default Carousel;
