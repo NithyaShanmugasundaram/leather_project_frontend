@@ -8,10 +8,9 @@ export default function Dropdown({ dropdownListItems }) {
                 Types
             </button>
             <ul className="general dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                {
-                    dropdownListItems.map((listItem, index) => {
-                        return (
-                            <li key={index}><NavLink className={({ isActive }) => (isActive ? "active" : "inactive")} to={listItem.link}>{listItem.label}</NavLink></li>
+                {dropdownListItems.map((listItem, index) => {
+                    return (
+                        <li key={index}><NavLink className={({ isActive }) => (isActive ? "active" : "inactive")} to={listItem.link}>{listItem.label}</NavLink></li>
                         )
                     })
                 }

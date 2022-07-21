@@ -73,7 +73,6 @@ Register.propTypes = {
     isAuthenticated: PropTypes.bool
 };
 const mapStateToProps = (state) => {
-
     return (
         {
             isAuthenticated: state.auth.isAuthenticated

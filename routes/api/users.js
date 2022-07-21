@@ -34,7 +34,6 @@ router.post('/',
                     id: user.id
                 }
             }
-            console.log(payload)
             jwt.sign(payload, config.get('jwtSecret'), { expiresIn: 3600 },
                 (err, token) => {
                     if (err) {
@@ -47,10 +46,6 @@ router.post('/',
             console.log(err.message)
             res.status(500).json('Server error!')
         }
-
     }
-
-
 )
-
 module.exports = router;

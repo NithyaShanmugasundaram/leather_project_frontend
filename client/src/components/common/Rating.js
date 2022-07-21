@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 const Rating = ({ stars }) => {
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
-    console.log('rating', rating)
-    console.log('hover', hover)
     return (
         <div className="star-rating">
             {[...Array(5)].map((star, index) => {

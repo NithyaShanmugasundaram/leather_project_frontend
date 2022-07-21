@@ -9,6 +9,8 @@ app.use(express.json({ extended: false }))
 //Define Routes
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'))
+app.use('/api/bags', require('./routes/api/bags'))
+//app.use('/api/bag/:bag_id', require('./routes/api/bags'))
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })

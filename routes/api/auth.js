@@ -31,9 +31,7 @@ router.get('/', auth, async (req, res) => {
             }
             try {
                 const { user_email, user_password } = req.body
-                console.log(user_email)
                 let user = await User.findOne({ user_email })
-                console.log(user)
                 if (!user) {
                     return res.status(400).json({ errors: [{ msg: "Invalid credentials" }] })
                 }

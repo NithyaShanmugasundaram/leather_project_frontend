@@ -60,7 +60,7 @@ export const login = (user_email, user_password) => async (dispatch) => {
   const body = { user_email, user_password };
   try {
     const res = await api.post('/auth', body);
-    console.log(res)
+    console.log('login', res)
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data

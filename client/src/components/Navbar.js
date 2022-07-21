@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { logout } from '../actions/auth';
 
 function Navbar({ isAuthenticated, logout }) {
+    console.log('isAuthenticated', isAuthenticated)
     return (<>
         <nav className="navbar navbar-expand-md navbar-light mx-0">
             <div className="container-fluid">
@@ -16,9 +17,9 @@ function Navbar({ isAuthenticated, logout }) {
                 <div className="navbar-collapse collapse justify-content-end" id="navbarSupportedContent">
                     <ul className="navbar-nav">
                         {!isAuthenticated ? <><li className="nav-item">
-                            <NavLink className={({ isActive }) => (isActive ? "active" : "inactive")} to="/" >Home</NavLink>
+                            <NavLink className={({ isActive }) => (isActive ? "active" : "inactive")} to="/">Home</NavLink>
                         </li>
-                            <li className="nav-item  dropdown">
+                            <li className="nav-item dropdown">
                                 <NavLink className={({ isActive }) => (isActive ? "active dropdown-toggle" : "inactive dropdown-toggle")} data-bs-toggle="dropdown" to="/bags" role="button" aria-expanded="true">Products</NavLink>
                                 <ul className="dropdown-menu">
                                     <li><NavLink className={({ isActive }) => (isActive ? "active" : "inactive")} to="/bags">Bags</NavLink></li>

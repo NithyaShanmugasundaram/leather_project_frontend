@@ -1,17 +1,31 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-export default function Dropdown({ dropdownListItems }) {
+const Quantity = [...new Array(100)];
+
+export default function Select({ quantity, dropdownListItems, onChange }) {
+
     return (
-        <select className="form-select" aria-label="Default select example">
-            <option selected>Types</option>
-            {
-                dropdownListItems.map((listItem, index) => {
+
+        quantity ?
+            <select className="form-select-sm" aria-label="quantity-select" onChange={(e) => onChange(e.target.value)
+            }>
+                {Quantity.map((each, index) => {
                     return (
-                        <option key={index} value={listItem.label} className="form-select-option">{listItem.label}</option>
+                        <option key={index} value={index} className="form-select-option">{index} </option>
                     )
                 })
-            }
-        </select>
+                }
+            </select > :
+            <select className="form-select" aria-label="quantity-select" onChange={(e) => onChange(e.target.value)}>
+                <option value="">Types</option>
+                {
+                    dropdownListItems.map((listItem, index) => {
+                        return (
+                            <option key={index} value={listItem.type} className="form-select-option">{listItem.label} </option>
+                        )
+                    })
+                }
+            </select>
     )
 }
