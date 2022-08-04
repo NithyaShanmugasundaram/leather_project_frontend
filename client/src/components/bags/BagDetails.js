@@ -1,17 +1,16 @@
 import React from 'react'
 import ContentContainer from '../ContentContainer'
-import { getProductById } from '../../actions/products'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Rating from '../common/Rating';
 import ColorPicker from '../common/ColorPicker';
 import Select from '../common/Select'
+import { ADD_CART } from '../../actions/types';
+import { useNavigate } from "react-router-dom";
 
 
-
-
-
-function BagDetails({ getProductById, productInfo: { product_size, product_name, product_description, product_sub_images, product_stars, product_review_count, product_colors, product_offer_price, product_shipping_info, product_original_price, product_content } }) {
+function BagDetails({ dispatch, productInfo: { product_size, product_name, _id, product_description, product_sub_images, product_stars, product_review_count, product_colors, product_offer_price, product_shipping_info, product_original_price, product_content } }) {
+    const navigate = useNavigate()
 
     const [selectedImage, setSelectedImage] = React.useState()
 
@@ -19,6 +18,17 @@ function BagDetails({ getProductById, productInfo: { product_size, product_name,
         setSelectedImage(image)
     }
 
+    const handleCartClick = (id, name, original_price, offer_price, image) => {
+        const data = {
+            id, name, original_price, offer_price, image
+        }
+
+        dispatch({ type: ADD_CART, payload: data })
+
+        navigate("/cart", { replace: true });
+
+
+    }
     React.useEffect(() => {
         product_sub_images && product_sub_images.forEach((img, index) => {
             if (index === 0) {
@@ -62,15 +72,14 @@ function BagDetails({ getProductById, productInfo: { product_size, product_name,
                                 <ColorPicker colors={product_colors} />
                             </div>
                             <p className="card-text pt-2 m-0">{product_content}</p>
-
-
                         </div>
                         <div className="col-md-2 cart_container">
                             <p>{product_original_price}</p>
                             <div className="item_text pt-2 mb-0">
                                 Free Shipping <span className="item_info mb-0">{`${product_shipping_info}`}</span>
                             </div>
-                            <div>Quantity : <Select quantity={true} /></div>
+                            <div className='mt-2'>Quantity : <Select quantity={true} /></div>
+                            <button className='btn btn-primary btn-sm mt-4' onClick={() => handleCartClick(_id, product_name, product_original_price, product_offer_price, product_sub_images[0])}>Add to cart</button>
                         </div>
 
                     </div>
@@ -88,4 +97,9 @@ const mapStateToProps = state => {
         productInfo: state.products.product
     }
 }
-export default connect(mapStateToProps, { getProductById })(BagDetails)
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         Add_product: dispatch(ADD_TO_CART)
+//     }
+// }
+export default connect(mapStateToProps)(BagDetails)

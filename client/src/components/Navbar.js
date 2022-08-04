@@ -46,7 +46,7 @@ function Navbar({ isAuthenticated, logout }) {
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <NavLink className={({ isActive }) => (isActive ? "active" : "inactive")} to=""><span className="bi bi-cart"></span></NavLink>
+                                <NavLink className={({ isActive }) => (isActive ? "active" : "inactive")} to="/cart"><span className="bi bi-cart"></span></NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink className={({ isActive }) => (isActive ? "active" : "inactive")} to="" onClick={logout}>Log Out</NavLink>
@@ -64,8 +64,10 @@ Navbar.propTypes = {
     logout: PropTypes.func
 };
 const mapStateToProps = state => {
+    console.log('state.cart.num', state.cart.numberCart)
     return {
         isAuthenticated: state.auth.isAuthenticated,
+        number_cart: state.cart.numberCart,
     }
 }
 export default connect(mapStateToProps, { logout })(Navbar);

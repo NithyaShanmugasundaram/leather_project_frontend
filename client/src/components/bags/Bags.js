@@ -32,14 +32,11 @@ function Bags({ getProducts, getProductById, productsList, productById }) {
             return item.product_type == selectedBagType
         })
         setDisplayBagsList(filteredBags)
-
     }
     const handleProductClick = (id) => {
         navigate(`/bags/${id}`, { replace: true });
         console.log('id', id)
-        getProductById( id )
-
-
+        getProductById(id)
     }
     React.useEffect(() => {
         getProducts()
@@ -62,7 +59,6 @@ function Bags({ getProducts, getProductById, productsList, productById }) {
             </div>
         </ContentContainer></>);
 }
-
 Bags.propTypes = {
     getProducts: PropTypes.func.isRequired,
     getProductById: PropTypes.func,
@@ -75,5 +71,4 @@ const mapStateToProps = state => {
         productById: state.products.product
     }
 }
-
 export default connect(mapStateToProps, { getProducts, getProductById })(Bags);

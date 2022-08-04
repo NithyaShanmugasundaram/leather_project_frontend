@@ -1,6 +1,5 @@
 import React from 'react';
 import Rating from '../common/Rating';
-
 export default function Card({ list, onClick }) {
     return (
         <>

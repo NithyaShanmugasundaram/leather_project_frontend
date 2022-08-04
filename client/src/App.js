@@ -8,6 +8,7 @@ import Pouches from './components/Pouches';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import BagDetails from "./components/bags/BagDetails";
+import Cart from './components/cart/index.js'
 // Redux
 import { Provider } from 'react-redux';
 import store from './store';
@@ -43,6 +44,7 @@ function App() {
         <Route path="pouches" element={<Pouches />}></Route>
         <Route path="register" element={<Register />}></Route>
         <Route path="login" element={<Login />}></Route>
+        <Route path="cart" element={<Cart />}></Route>
       </Routes>
     </Provider>
   );
